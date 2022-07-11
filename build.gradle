@@ -26,7 +26,19 @@ task zip(type: Zip) {
 	destinationDir(file("dist"))
 	baseName "trainSchedule"
 }
-
+task zip(type: Zip) {
+	from ('.') {
+		include "*"
+		include "bin/**"
+		include "data/**"
+		include "node_modules/**"
+		include "public/**"
+		include "routes/**"
+		include "views/**"
+	}
+	destinationDir(file("dist2"))
+	baseName "trainSchedule2"
+}
 //declare task dependencies
 build.dependsOn zip
 zip.dependsOn npm_build
