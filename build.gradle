@@ -26,18 +26,16 @@ task zip(type: Zip) {
 	destinationDir(file("dist"))
 	baseName "trainSchedule"
 }
-task zip2(type: Zip) {
-	from ('.') {
-		include "*"
-		include "bin/**"
-		include "data/**"
-		include "node_modules/**"
-		include "public/**"
-		include "routes/**"
-		include "views/**"
-	}
-	destinationDir(file("dist2"))
-	baseName "trainSchedule2"
+
+//declare a 2nde task zip from stackoF
+
+task myZip(type: Zip) {
+	from '/' 
+	include "*"
+	include "*/*"
+	archiveName 'trainschedule2.zip'
+   	destinationDir(file('destination'))
+	
 }
 //declare task dependencies
 build.dependsOn zip
