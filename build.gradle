@@ -26,7 +26,7 @@ task zip(type: Zip) {
 	destinationDir(file("dist"))
 	baseName "trainSchedule"
 }
-task zip(type: Zip) {
+task zip2(type: Zip) {
 	from ('.') {
 		include "*"
 		include "bin/**"
