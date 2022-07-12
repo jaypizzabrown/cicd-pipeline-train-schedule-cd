@@ -29,18 +29,10 @@ task zip(type: Zip) {
 
 //declare a 2nde task zip from stackoF
 
-task myZip(type: Zip) {
-	from '/' 
-	include "*"
-	include "*/*"
-	archiveName 'trainschedule2.zip'
-   	destinationDir(file('destination'))
-	
-}
+
 //declare task dependencies
 build.dependsOn zip
 zip.dependsOn npm_build
-zip2.dependsOn npm_build
 npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
 npm_build.dependsOn npmInstall
