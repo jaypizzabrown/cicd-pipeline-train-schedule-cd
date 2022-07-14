@@ -14,7 +14,7 @@ pipeline {
                 echo 'Running build automation 2 '
             }
         }
-		stage('DeployToStaging') {
+	stage('DeployToStaging') {
             when {
                 branch 'master'
             }
